@@ -16,7 +16,7 @@ module.exports = {
         name: 'Product 3',
         price: 300
       }
-    ])
+    ], {})
   },
 
   async down (queryInterface, Sequelize) {
