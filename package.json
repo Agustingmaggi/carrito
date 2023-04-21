@@ -5,7 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "clear && nodemon app.js -e mjs,js,json,ejs",
-    "start": "node app.js"
+    "start": "node app.js",
+    "sql:init": "sequelize init",
+    "sql:mg:create": "sequelize migration:generate --name=products",
+    "sql:mg:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate",
+    "sql:sd:create": "sequelize seed:generate --name=products",
+    "sql:sd:run": "sequelize db:seed:undo:all && sequelize db:seed"
   },
   "keywords": [],
   "author": "",
