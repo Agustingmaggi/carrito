@@ -48,6 +48,9 @@
             })
             %>
             <p>Total: $<%= total %></p>
+                <form action="/checkout" method="post">
+                    <button type="submit">Pagar</button>
+                    </form>
             <% } else { %>
              no hay prods
             <% } %>
