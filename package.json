@@ -7,7 +7,7 @@
     "test": "clear && nodemon app.js -e mjs,js,json,ejs",
     "start": "node app.js",
     "sql:init": "sequelize init",
-    "sql:db:create":"sequelize db:create",
+    "sql:db:create": "sequelize db:create",
     "sql:mg:create": "sequelize migration:generate --name=products",
     "sql:mg:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "sql:sd:create": "sequelize seed:generate --name=products",
@@ -19,6 +19,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mysql2": "^3.2.3",
     "sequelize": "^6.31.0"
   },

@@ -25,5 +25,32 @@
         <p>No hay prods en la tabla de datos</p>
         <% } %>
 
+        <h2>Carrito </h2>
+
+        <% if (cart.length > 0) { %>
+            <ul>
+                <% cart.forEach(function(product){ %>
+                    <li>
+                        <%= product.name %> |
+                        <%= product.quantity %>
+                        <%= product.subtotal %>
+                        <form action="/eliminar" method="post">
+                            <input type="hidden" name="id" value="<%= product.id %>">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </li>
+                <% }) %>
+            </ul>
+            <% 
+            let total = 0
+            cart.forEach(function(product){
+                total += product.subtotal
+            })
+            %>
+            <p>Total: $<%= total %></p>
+            <% } else { %>
+             no hay prods
+            <% } %>
+
 </body>
 </html>
