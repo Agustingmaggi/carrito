@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1> <%= title %></h1>
+    <% if (products.length > 0) { %>
+    <ul>
+        <% products.forEach(function(product){ %>
+            <li>
+                <%= product.name %> | $<%= product.price %>
+            <form action="/agregar" method="post">
+            <input type="hidden" name="id" value="<%= product.id %>">
+            <input type="number" min="1" name="quantity">
+            <button type="submit">Agregar</button>    
+            </form>
+            </li>
+       <% }) %> 
+    </ul>
+    <% } else { %>
+        <p>No hay prods en la tabla de datos</p>
+        <% } %>
+
 </body>
 </html>
